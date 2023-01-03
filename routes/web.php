@@ -20,6 +20,9 @@ Route::get('/', function () {
 Route::get('/documentation', function () {
     return view('documentation');
 });
+Route::get('/about', function () {
+    return view('about');
+});
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

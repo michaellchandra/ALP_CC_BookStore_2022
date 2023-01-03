@@ -45,7 +45,7 @@
                                     <tbody>
                                         <tr>
                                             <td>GET</td>
-                                            <td>https://everywherebooks.salahjurusan.com/api/judulbuku</td>
+                                            <td>http://everywherebooks.salahjurusan.com/api/v1/books</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -67,17 +67,17 @@
                                     <tbody>
                                         <tr>
                                             <td>GET</td>
-                                            <td>api_key</td>
-                                            <td>Ya</td>
-                                            <td>String</td>
-                                            <td>API Key</td>
-                                        </tr>
-                                        <tr>
-                                            <td>GET</td>
                                             <td>id</td>
                                             <td>Tidak</td>
                                             <td>String</td>
                                             <td>ID Judul Buku</td>
+                                        </tr>
+                                        <tr>
+                                            <td>GET</td>
+                                            <td>title</td>
+                                            <td>Tidak</td>
+                                            <td>String</td>
+                                            <td>Judul Buku</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -96,14 +96,14 @@
                                     <tbody>
                                         <tr>
                                             <td>Sukses</td>
-                                            <td style="text-align: left;"><code>Text</code></td>
+                                            <td style="text-align: left;"><code><br>{<br>&nbsp; "data": [<br>&nbsp; &nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; "id": "1",<br>&nbsp; &nbsp; &nbsp; &nbsp; "type": "Books",<br>&nbsp; &nbsp; &nbsp; &nbsp; "attributes": {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "name": "Leslie Herman"<br>&nbsp; &nbsp; &nbsp; &nbsp; }<br>&nbsp; &nbsp; &nbsp; }<br>&nbsp; ]<br>}<br><br></code></td>
                                         </tr>
                                         <tr>
                                             <td>Gagal</td>
                                             <td style="text-align: left;"><code><br><span
                                                         style="color: rgb(255 255 255 / var(--tw-text-opacity)); background-color: rgb(17 24 39 / var(--tw-bg-opacity));">{</span><br><span
                                                         style="color: rgb(255 255 255 / var(--tw-text-opacity)); background-color: rgb(17 24 39 / var(--tw-bg-opacity));">
-                                                        "result": "Invalid API Key"</span><br><span
+                                                        "message": "Unauthenticated."</span><br><span
                                                         style="color: rgb(255 255 255 / var(--tw-text-opacity)); background-color: rgb(17 24 39 / var(--tw-bg-opacity));">}</span><br><br></code>
                                             </td>
                                         </tr>
@@ -123,14 +123,14 @@
                 <div style="text-align: center;">
                     <ul class="nav nav-tabs" role="tablist" style="text-align: center;">
                         <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab"
-                                href="#tab-1"><strong>URL</strong></a></li>
+                                href="#tab-1-author"><strong>URL</strong></a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab"
-                                href="#tab-2"><strong>Parameter</strong></a></li>
+                                href="#tab-2-author"><strong>Parameter</strong></a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link active" role="tab"
-                                data-bs-toggle="tab" href="#tab-3"><strong>Response</strong></a></li>
+                                data-bs-toggle="tab" href="#tab-3-author"><strong>Response</strong></a></li>
                     </ul>
                     <div class="tab-content">
-                        <div class="tab-pane" role="tabpanel" id="tab-1">
+                        <div class="tab-pane" role="tabpanel" id="tab-1-author">
                             <p style="margin: 30px;">Penulis Buku menampilkan berbagai penulis buku yang tersimpan
                                 dalam database EverywhereBooks</p>
                             <div class="table-responsive">
@@ -144,13 +144,13 @@
                                     <tbody>
                                         <tr>
                                             <td>GET</td>
-                                            <td>https://everywherebooks.salahjurusan.com/api/authorbuku<br></td>
+                                            <td>http://everywherebooks.salahjurusan.com/api/v1/authorbuku<br></td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-                        <div class="tab-pane" role="tabpanel" id="tab-2">
+                        <div class="tab-pane" role="tabpanel" id="tab-2-author">
                             <p style="margin: 30px;">Parameter yang digunakan dalam pengambilan data author buku<br>
                             </p>
                             <div class="table-responsive">
@@ -167,23 +167,23 @@
                                     <tbody>
                                         <tr>
                                             <td>GET</td>
-                                            <td>api_key</td>
-                                            <td>Ya</td>
-                                            <td>String</td>
-                                            <td>API Key</td>
-                                        </tr>
-                                        <tr>
-                                            <td>GET</td>
                                             <td>id</td>
                                             <td>Tidak</td>
                                             <td>String</td>
                                             <td>ID Author Buku</td>
                                         </tr>
+                                        <tr>
+                                            <td>GET</td>
+                                            <td>nama</td>
+                                            <td>Tidak</td>
+                                            <td>String</td>
+                                            <td>Nama Author Buku</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-                        <div class="tab-pane active" role="tabpanel" id="tab-3">
+                        <div class="tab-pane active" role="tabpanel" id="tab-3-author">
                             <p style="margin: 30px;">Berikut adalah response ketika melakukan koneksi ke author
                                 buku<br></p>
                             <div class="table-responsive">
@@ -197,14 +197,14 @@
                                     <tbody>
                                         <tr>
                                             <td>Sukses</td>
-                                            <td style="text-align: left;"><code>Text</code></td>
+                                            <td style="text-align: left;"><code>{ <br>&nbsp; "data": [<br>&nbsp; &nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; "id": "1",<br>&nbsp; &nbsp; &nbsp; &nbsp; "type": "Authors",<br>&nbsp; &nbsp; &nbsp; &nbsp; "attributes": {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "name": "Prof. Harvey Little"<br>&nbsp; &nbsp; &nbsp; &nbsp; }<br>&nbsp; &nbsp; &nbsp; }<br>&nbsp; ]<br>}<br></code><code>{ <br>&nbsp; "data": [<br>&nbsp; &nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; "id": "1",<br>&nbsp; &nbsp; &nbsp; &nbsp; "type": "Authors",<br>&nbsp; &nbsp; &nbsp; &nbsp; "attributes": {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "name": "Prof. Harvey Little"<br>&nbsp; &nbsp; &nbsp; &nbsp; }<br>&nbsp; &nbsp; &nbsp; }<br>&nbsp; ]<br>}<br></code><code>{ <br>&nbsp; "data": [<br>&nbsp; &nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; "id": "1",<br>&nbsp; &nbsp; &nbsp; &nbsp; "type": "Authors",<br>&nbsp; &nbsp; &nbsp; &nbsp; "attributes": {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "name": "Prof. Harvey Little"<br>&nbsp; &nbsp; &nbsp; &nbsp; }<br>&nbsp; &nbsp; &nbsp; }<br>&nbsp; ]<br>}<br></code></td>
                                         </tr>
                                         <tr>
                                             <td>Gagal</td>
                                             <td style="text-align: left;"><code><br><span
                                                         style="color: rgb(255 255 255 / var(--tw-text-opacity)); background-color: rgb(17 24 39 / var(--tw-bg-opacity));">{</span><br><span
                                                         style="color: rgb(255 255 255 / var(--tw-text-opacity)); background-color: rgb(17 24 39 / var(--tw-bg-opacity));">
-                                                        "result": "Invalid API Key"</span><br><span
+                                                        "message": "Unauthenticated."</span><br><span
                                                         style="color: rgb(255 255 255 / var(--tw-text-opacity)); background-color: rgb(17 24 39 / var(--tw-bg-opacity));">}</span><br></code>
                                             </td>
                                         </tr>
@@ -217,21 +217,21 @@
             </div>
         </div>
     </div>
-    <div class="container" style="margin-top: 20px;">
+    {{-- <div class="container" style="margin-top: 20px;">
         <h1><strong>Kategori Buku</strong></h1>
         <div class="row">
             <div class="col">
                 <div style="text-align: center;">
                     <ul class="nav nav-tabs" role="tablist" style="text-align: center;">
                         <li class="nav-item" role="presentation"><a class="nav-link" role="tab"
-                                data-bs-toggle="tab" href="#tab-1"><strong>URL</strong></a></li>
+                                data-bs-toggle="tab" href="#tab-1-kategori"><strong>URL</strong></a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" role="tab"
-                                data-bs-toggle="tab" href="#tab-2"><strong>Parameter</strong></a></li>
+                                data-bs-toggle="tab" href="#tab-2-kategori"><strong>Parameter</strong></a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link active" role="tab"
-                                data-bs-toggle="tab" href="#tab-3"><strong>Response</strong></a></li>
+                                data-bs-toggle="tab" href="#tab-3-kategori"><strong>Response</strong></a></li>
                     </ul>
                     <div class="tab-content">
-                        <div class="tab-pane" role="tabpanel" id="tab-1">
+                        <div class="tab-pane" role="tabpanel" id="tab-1-kategori">
                             <p style="margin: 30px;">Kategori Buku menampilkan berbagai daftar kategori buku yang
                                 tersimpan dalam database EverywhereBooks</p>
                             <div class="table-responsive">
@@ -251,7 +251,7 @@
                                 </table>
                             </div>
                         </div>
-                        <div class="tab-pane" role="tabpanel" id="tab-12">
+                        <div class="tab-pane" role="tabpanel" id="tab-2-kategori">
                             <p style="margin: 30px;">Judul Buku menampilkan berbagai daftar judul buku yang tersimpan
                                 dalam database EverywhereBooks</p>
                             <div class="table-responsive">
@@ -271,140 +271,8 @@
                                 </table>
                             </div>
                         </div>
-                        <div class="tab-pane" role="tabpanel" id="tab-11">
-                            <p style="margin: 30px;">Judul Buku menampilkan berbagai daftar judul buku yang tersimpan
-                                dalam database EverywhereBooks</p>
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr style="background: rgb(36,40,91);">
-                                            <th style="width: 325.414px;color: rgb(255,255,255);">Method</th>
-                                            <th style="color: rgb(255,255,255);">URL</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>GET</td>
-                                            <td>Cell 2</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="tab-pane" role="tabpanel" id="tab-10">
-                            <p style="margin: 30px;">Judul Buku menampilkan berbagai daftar judul buku yang tersimpan
-                                dalam database EverywhereBooks</p>
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr style="background: rgb(36,40,91);">
-                                            <th style="width: 325.414px;color: rgb(255,255,255);">Method</th>
-                                            <th style="color: rgb(255,255,255);">URL</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>GET</td>
-                                            <td>Cell 2</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="tab-pane" role="tabpanel" id="tab-9">
-                            <p style="margin: 30px;">Judul Buku menampilkan berbagai daftar judul buku yang tersimpan
-                                dalam database EverywhereBooks</p>
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr style="background: rgb(36,40,91);">
-                                            <th style="width: 325.414px;color: rgb(255,255,255);">Method</th>
-                                            <th style="color: rgb(255,255,255);">URL</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>GET</td>
-                                            <td>Cell 2</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="tab-pane" role="tabpanel" id="tab-8">
-                            <p style="margin: 30px;">Judul Buku menampilkan berbagai daftar judul buku yang tersimpan
-                                dalam database EverywhereBooks</p>
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr style="background: rgb(36,40,91);">
-                                            <th style="width: 325.414px;color: rgb(255,255,255);">Method</th>
-                                            <th style="color: rgb(255,255,255);">URL</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>GET</td>
-                                            <td>Cell 2</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="tab-pane" role="tabpanel" id="tab-7">
-                            <p style="margin: 30px;">Judul Buku menampilkan berbagai daftar judul buku yang tersimpan
-                                dalam database EverywhereBooks</p>
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr style="background: rgb(36,40,91);">
-                                            <th style="width: 325.414px;color: rgb(255,255,255);">Method</th>
-                                            <th style="color: rgb(255,255,255);">URL</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>GET</td>
-                                            <td>Cell 2</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="tab-pane" role="tabpanel" id="tab-2">
-                            <p style="margin: 30px;">Parameter yang digunakan dalam pengambilan data kategori buku<br>
-                            </p>
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr style="background: rgb(36,40,91);">
-                                            <th style="color: rgb(255,255,255);">Method</th>
-                                            <th style="color: rgb(255,255,255);">Parameter</th>
-                                            <th style="color: rgb(255,255,255);">Wajib</th>
-                                            <th style="color: rgb(255,255,255);">Tipe</th>
-                                            <th style="color: rgb(255,255,255);">Keterangan</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>GET</td>
-                                            <td>api_key</td>
-                                            <td>Ya</td>
-                                            <td>String</td>
-                                            <td>API Key</td>
-                                        </tr>
-                                        <tr>
-                                            <td>GET</td>
-                                            <td>id</td>
-                                            <td>Tidak</td>
-                                            <td>String</td>
-                                            <td>ID Kategori Buku</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="tab-pane active" role="tabpanel" id="tab-3">
+                        
+                        <div class="tab-pane active" role="tabpanel" id="tab-3-kategori">
                             <p style="margin: 30px;">Berikut adalah response ketika melakukan koneksi ke kategori
                                 buku<br></p>
                             <div class="table-responsive">
@@ -437,6 +305,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 </section>
 @endsection

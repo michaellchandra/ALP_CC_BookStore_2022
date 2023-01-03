@@ -25,9 +25,8 @@
             <div class="collapse navbar-collapse " id="navcol-1">
                 <ul class="navbar-nav mx-auto ">
                     <li class="nav-item"><a class="nav-link active text-white" href="/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="listbuku">Lists</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="documentation">Documentation</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="about">About</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="testimoni">Testimoni</a></li>
                 </ul>
                 @guest
                     <a class="btn btn-warning shadow" role="button" href="{{ route('login') }}">Log In</a>
