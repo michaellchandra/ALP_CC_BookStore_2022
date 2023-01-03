@@ -12,6 +12,7 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Raleway:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -27,15 +28,20 @@
                     <li class="nav-item"><a class="nav-link text-white" href="listbuku">Lists</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="about">About</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="testimoni">Testimoni</a></li>
-                    
-                    
                 </ul>
-                <a class="btn btn-warning shadow" role="button" href="login">Log In</a>
+                @guest
+                    <a class="btn btn-warning shadow" role="button" href="{{ route('login') }}">Log In</a>
 
                     <tr>
                         <td>&nbsp;</td>
                     </tr>
-                <a class="btn btn-light shadow" role="button" href="signup">Sign Up</a>
+                    <a class="btn btn-light shadow" role="button" href="{{ route('register-user') }}">Sign Up</a>
+                @else
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('signout') }}">Logout</a>
+                </li>
+                @endguest
+
             </div>
         </div>
     </nav>
@@ -55,10 +61,10 @@
     {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script> --}}
-    
+
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/startup-modern.js"></script>
-    
+
 </body>
 
 </html>
